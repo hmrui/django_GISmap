@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/hmap/calculator.css" type="text/css">
+        <title>
+            Calculator
+        </title>
+    </head>
+    <body>
+        <form method="POST">
+            <input type="hidden" name="result" value="{{result}}">
+            <input type="hidden" name="newValue" value="{{newValue}}">
+            <input type="hidden" name="preValue" value="{{preValue}}">
+            <input type="hidden" name="preOpr" value="{{preOpr}}">
+            
+            <div>
+                <input class="form" value="{{result}}" type="text" id="calc-display" readonly>
+            </div>
+           
+
+            <table>
+                <tr>
+                    <td >
+                        <input class = "button1" type="submit" name= "num" value="7" id="calc-key-7" >
+                    </td>
+                    <td >
+                        <input class = "button1" type="submit" name= "num" value="8" id="calc-key-8" >
+                    </td>
+                    <td>
+                        <input class = "button1" type="submit" name= "num" value="9" id="calc-key-9" >
+                    </td>
+                    <td>
+                        <input class = "button2" type="submit" name= "opr" value="+" id="calc-plus"  >
+                    </td>
+                </tr>
+                <tr>
+                    <td >
+                        <input class = "button1" type="submit" name= "num" value="4" id="calc-key-4" >
+                    </td>
+                    <td>
+                        <input class = "button1" type="submit" name= "num" value="5" id="calc-key-5" >
+                    </td>
+                    <td>
+                        <input class = "button1" type="submit" name= "num" value="6" id="calc-key-6" >
+                    </td>
+                    <td>
+                        <input class = "button2" type="submit" name= "opr" value="-" id="calc-minus" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class = "button1" type="submit" name= "num" value="1" id="calc-key-1" >
+                    </td>
+                    <td>
+                        <input class = "button1" type="submit" name= "num" value="2" id="calc-key-2" >
+                    </td>
+                    <td>
+                        <input class = "button1" type="submit" name= "num" value="3" id="calc-key-3" >
+                    </td>
+                    <td>
+                        <input class = "button2" type="submit" name= "opr" value="×" id="calc-times" >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input class = "button1" type="submit" name= "num" value="0" id="calc-key-0" >
+                    </td>
+                    <td>
+                        <input class = "button2" type="submit" name= "equal" value="=" id="calc-equals" >
+                    </td>
+                    <td>
+                        <input class = "button2" type="submit" name= "opr" value="÷" id="calc-divide" >
+                    </td>
+                </tr>
+            </table>
+            {% csrf_token %} 
+        </form>
+    </body>
+</html>
