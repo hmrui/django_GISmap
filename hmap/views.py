@@ -6,7 +6,7 @@ from django.http import HttpResponse
 
 
 def index_action(request):
-    return render(request, 'hmap/calculator.html', {})
+    return render(request, 'hmap/1.html', {})
 
 
 def screw_action(request):
