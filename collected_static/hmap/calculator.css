@@ -1,0 +1,49 @@
+.button1:hover{
+    width: 50;
+    height: 50;
+    border-radius: 15px;
+    font-size: 25;
+    background: #add450;
+    cursor: pointer;
+}
+.button1{
+    width: 50;
+    height: 50;
+    border-radius: 15px;
+    font-size: 25;
+    background: #9dad95;
+    cursor: pointer;
+}
+
+.button1:hover{
+    width: 50;
+    height: 50;
+    border-radius: 15px;
+    font-size: 25;
+    background: #add450;
+    cursor: pointer;
+}
+
+.button2:hover{
+    width: 50;
+    height: 50;
+    border-radius: 15px;
+    font-size: 25;
+    background: #e75512;
+    cursor: pointer;
+}
+.button2{
+    width: 50;
+    height: 50;
+    border-radius: 15px;
+    font-size: 25;
+    background: #e7956e;
+    cursor: pointer;
+}
+.form{
+    width: 220;
+    height: 50;
+    text-align: right;
+    font-size: 25;
+    background-color: #82a334;
+}
