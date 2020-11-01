@@ -6,8 +6,8 @@ from django.http import HttpResponse
 
 
 def index_action(request):
-    return render(request, 'hmap/1.html', {})
+    return render(request, 'hmap/index.html', {})
 
+def DataCity_action(request):
+    return render(request, 'hmap/DataCity.html', {})
 
-def screw_action(request):
-    return HttpResponse("陈一飞是个大傻b")

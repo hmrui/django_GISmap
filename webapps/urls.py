@@ -20,6 +20,7 @@ from hmap import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index_action, name='index'),
-    path('screw/', views.screw_action)
+    path('DataCity/', views.DataCity_action, name='DataCity')
+
 
 ]
