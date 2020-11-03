@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <title>DataCity</title>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="../../static/hmap/carousel.css" rel="stylesheet">
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
@@ -31,7 +32,7 @@
             overflow: hidden;
         }
         
-        .container {
+        .panel-group {
             width: 150px;
             top: 10%;
             position: absolute;
@@ -44,25 +45,44 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-                <a class="navbar-brand" href="index.html">Home</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">DataCity <span class="sr-only">(current)</span></a></li>
-                    <!-- <li><a href="#">Link</a></li> -->
-                </ul>
-            </div>
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                        <a class="navbar-brand" href="#">DataGY</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../index">Home</a></li>
+                            <li class="active"><a href="#about">DataCity</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Nav header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
         </div>
-    </nav>
+    </div>
     <div id="latlng_show" style="width:120px;height:120px;position:absolute;top:75%;right:0%;z-index:1;font-size:15px;">
         <div style="width:100px;height:40px;float:left;">
             <font size="2" color="white">经度：<span id="longitude_show"></span></font>
@@ -74,47 +94,65 @@
             <font size="2" color="white">视角高：<span id="altitude_show"></span>km</font>
         </div>
     </div>
-    <div class="container thumbnail">
-        <form>
-            <div class="checkbox ">
-                <label>
-          <input type="checkbox" value="" onclick="checkboxOnclick1(this)">
-          3DTile-building
-        </label>
-                <label>
-          <input type="checkbox" value="" onclick="checkboxOnclick2(this)">
-          3DTile-business
-        </label>
-                <label>
-          <input type="checkbox" value="" onclick="checkboxOnclick3(this)">
-          3DTile-house
-        </label>
-                <label>
-          <input type="checkbox" value="" onclick="checkboxOnclick4(this)">
-          3DTile-industry
-        </label>
-                <label>
-          <input type="checkbox" value="" onclick="checkboxOnclick5(this)">
-          3DTile-village
-        </label>
-                <label>
-          <input type="checkbox" value="" onclick="checkboxOnclick6(this)">
-          3DTile-public
-        </label>
+
+    <div class=" panel-group  thumbnai" id="accordion">
+        <div class="panel panel-default" style="background-color:  rgba(187, 255, 255, 0.5);">
+            <div class="panel-heading" style="background-color:  rgba(12, 12, 12, 0.5);">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" style="color: cornsilk;">
+              选择加载类型<span class="caret"></span>
+            </a>
+                </h4>
             </div>
-        </form>
+            <div id="collapseOne" class="panel-collapse collapse ">
+                <div class="panel-body l ">
+                    <form>
+                        <div class="checkbox " style="float: left;">
+                            <label style="color: black;">
+                  <input type="checkbox" value="" onclick="checkboxOnclick1(this)">
+                  所有建筑
+                </label>
+                            <label style="color: black;">
+                  <input type="checkbox" value="" onclick="checkboxOnclick2(this)">
+                  商业分布
+                </label>
+                            <label style="color: black;">
+                  <input type="checkbox" value="" onclick="checkboxOnclick3(this)">
+                  住宅分布
+                </label>
+                            <label style="color: black;">
+                  <input type="checkbox" value="" onclick="checkboxOnclick4(this)">
+                  产业分布
+                </label>
+                            <label style="color: black;">
+                  <input type="checkbox" value="" onclick="checkboxOnclick5(this)">
+                  乡村分布
+                </label>
+                            <label style="color: black;">
+                  <input type="checkbox" value="" onclick="checkboxOnclick6(this)">
+                  公共设施
+                </label>
+                            <label style="color: black;">
+                  <input type="checkbox" value="" onclick="checkboxOnclick7(this)">
+                  BIM数据
+                </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="cesiumContainer"></div>
     <script>
         var url = "http://mt1.google.cn/vt/lyrs=s&hl=zh-CN&x={x}&y={y}&z={z}&s=Gali";
-        Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNjkyNjYzMC00MTc0LTQ0NGMtOWMxOS01YTViYmQ2OTMzZDIiLCJpZCI6MjEwNywiaWF0IjoxNjAzMjQ4NjMxfQ.AqimDfC_A3bi48iLej1DtkH24b0lGP8aZx-UTnHyCx4";
+        // Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkNjkyNjYzMC00MTc0LTQ0NGMtOWMxOS01YTViYmQ2OTMzZDIiLCJpZCI6MjEwNywiaWF0IjoxNjAzMjQ4NjMxfQ.AqimDfC_A3bi48iLej1DtkH24b0lGP8aZx-UTnHyCx4";
         var viewer = new Cesium.Viewer("cesiumContainer", {
             animation: false, // 是否显示动画控件
             shouldAnimate: false, // 是否初始时刻运动
-            homeButton: true, // 是否显示Home按钮
+            homeButton: false, // 是否显示Home按钮
             fullscreenButton: true, // 是否显示全屏按钮
             baseLayerPicker: false, // 是否显示图层选择控件 去掉自带的图层选择器
-            geocoder: true, // 是否显示地名查找控件,设置为true，则无法查询
+            geocoder: false, // 是否显示地名查找控件,设置为true，则无法查询
             timeline: false, // 是否显示时间线控件
             sceneModePicker: false, // 是否显示投影方式控件 三维/二维
             navigationHelpButton: false, // 是否显示帮助信息控件
@@ -130,6 +168,7 @@
             //terrainProvider: Cesium.createWorldTerrain(), // 注释时相当于使用默认地形，解开注释相当于使用全球地形[世界地形数据]
         });
         viewer._cesiumWidget._creditContainer.style.display = "none";
+        var scene = viewer.scene;
         var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
         var tileset1 = viewer.scene.primitives.add(
             new Cesium.Cesium3DTileset({
@@ -154,6 +193,9 @@
         });
         var tileset_public = new Cesium.Cesium3DTileset({
             url: "../../static/hmap/data/public/tileset.json",
+        });
+        var tilesetBIM = new Cesium.Cesium3DTileset({
+            url: Cesium.IonResource.fromAssetId(8564),
         });
 
         function checkboxOnclick1(checkbox) {
@@ -354,12 +396,41 @@
                 //tileset.readyPromise.then(zoomToTileset);
             }
         }
+
+        function checkboxOnclick7(checkbox) {
+
+            if (checkbox.checked == true) {
+                //viewer.scene.primitives.add(tileset_public);
+                // tileset.readyPromise.then(zoomToTileset);        
+                scene.primitives.add(tilesetBIM);
+
+                tilesetBIM.readyPromise
+                    .then(function(tilesetBIM) {
+                        viewer.flyTo(
+                            tilesetBIM,
+                            new Cesium.HeadingPitchRange(
+                                0.5, -0.2,
+                                tilesetBIM.boundingSphere.radius * 4.0
+                            )
+                        );
+                    })
+                    .otherwise(function(error) {
+                        console.log(error);
+                    });
+
+                tilesetBIM.colorBlendMode = Cesium.Cesium3DTileColorBlendMode.REPLACE;
+                tilesetBIM.show = true;
+            } else {
+                tilesetBIM.show = false;
+                //tileset.readyPromise.then(zoomToTileset);
+            }
+        }
         //viewer.scene.primitives.add(tileset);
-        setTimeout(function() {
-            viewer.camera.flyTo({
-                destination: Cesium.Cartesian3.fromDegrees(106.7159, 26.5744, 4200.0)
-            });
-        }, 3000);
+        // setTimeout(function() {
+        //     viewer.camera.flyTo({
+        //         destination: Cesium.Cartesian3.fromDegrees(106.7159, 26.5744, 4200.0)
+        //     });
+        // }, 3000);
 
         /*
         tileset.readyPromise.then(function (tileset) {
